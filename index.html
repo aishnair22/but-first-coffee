@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>But First, Coffee</title>
+    <link rel="icon" href="./images/favicon.png" type="image/png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheets/reset.css">
+    <link rel="stylesheet" href="./stylesheets/header.css">
+    <link rel="stylesheet" href="./stylesheets/graph.css">
+    <link rel="stylesheet" href="./stylesheets/main.css">
+
 </head>
-<body>
-    <h1>Coffee!!!!</h1>
+<body class="entire-page">
+    <header class="header">
+        <div class="title">but first, coffee</div>
+        <div class="about-me">
+            <h1 class="by-name">by Aishwarya Nair</h1>
+            <div class="about-me-links">
+                <a class="header-link" href="https://github.com/aishnair22/" target=”_blank”>
+                    <img src="./images/github.png" alt="">
+                </a>
+                <a class="header-link" href="https://www.linkedin.com/in/aishwarya-nair22/" target=”_blank”>
+                    <img src="./images/linkedin.png" alt="">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="all-drink-info">
+            <div>
+                <div>drink name</div>
+                <div>
+                    <img src="./images/pumpkin_cold_brew.jpg" height="100px" width="100px" alt="">
+                </div>
+            </div>
+
+            <div class="graph">Nutritional Facts
+                <canvas id="myChart"></canvas>
+                <script src="graph.js"></script>
+            </div>
+        </div>
+
+        <div>all pics at bottom</div>
+    </div>
 </body>
 </html>
