@@ -1,8 +1,41 @@
 .main {
     display: flex;
-    flex-direction: column;
+    margin-top: 30px;
 }
 
-.all-drink-info {
+.all-pics {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 0px 5%; 
+}
+
+.indiv-image {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid transparent;
+}
+
+.click-me:hover {
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.selected {
+    border-radius: 20px;
+    background-color: #75b4a3;
+}
+
+.caption {
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.click-me {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin: 20px;
 }

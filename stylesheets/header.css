@@ -18,7 +18,7 @@
 
 .by-name {
     margin-right: 10px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .about-me-links {
@@ -26,11 +26,12 @@
 }
 
 .title {
-    font-family: 'Abril Fatface', cursive;    
-    font-size: 45px;
+    font-family: 'Alata', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
     margin-top: 20px;
     letter-spacing: 1px;
-    color: #1e3932
+    color: #2f574c;
 }
 
 .header-link {
@@ -46,4 +47,10 @@
     height: 27px;
     width: 27px;
     margin-right: 10px
+}
+
+.horizontal-line {
+    border-top: 1px solid #2f574c;
+    width: 50%;
+    margin: 0 auto;
 }

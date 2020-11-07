@@ -1,45 +1,189 @@
-// const africa = [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478];
-// const asia = [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267];
-// const europe = [168, 170, 178, 190, 203, 276, 408, 547, 675, 734];
-// const latinAmerica = [40, 20, 10, 16, 24, 38, 74, 167, 508, 784];
-// const northAmerica = [6, 3, 2, 2, 7, 26, 82, 172, 312, 433];
+// % of DV based on a 2000 Calorie Daily Intake
+// caffeine in mg
+const latte = {
+    name: ['Caffè Latte'],
+    fat: [9],
+    cholesterol: [10],
+    sodium: [7],
+    carbs: [7],
+    protein: [26]
+};
+const psl = {
+    name: ['Pumpkin Spice Latte'],
+    fat: [18],
+    cholesterol: [18],
+    sodium: [10],
+    carbs: [19],
+    protein: [28]
+};
+const chai = {
+    name: ['Chai Latte'],
+    fat: [6],
+    cholesterol: [7],
+    sodium: [5],
+    carbs: [16],
+    protein: [16]
+};
+const mocha = {
+    name: ['Iced Caffè Mocha'],
+    fat: [22],
+    cholesterol: [18],
+    sodium: [4],
+    carbs: [14],
+    protein: [20]
+};
+const caramel_macchiato = {
+    name: ['Iced Caramel Macchiato'],
+    fat: [9],
+    cholesterol: [8],
+    sodium: [7],
+    carbs: [13],
+    protein: [20]
+};
+const pumpkin_cold_brew = {
+    name: ['Pumpkin Cream Cold Brew'],
+    fat: [15],
+    cholesterol: [13],
+    sodium: [2],
+    carbs: [11],
+    protein: [6]
+};
+const hot_chocolate = {
+    name: ['Hot Chocolate'],
+    fat: [19],
+    cholesterol: [15],
+    sodium: [7],
+    carbs: [16],
+    protein: [28]
+};
+const caramel_frap = {
+    name: ['Caramel Frappuccino'],
+    fat: [19],
+    cholesterol: [15],
+    sodium: [10],
+    carbs: [21],
+    protein: [8]
+};
+const cookie_frap = {
+    name: ['Mocha Cookie Crumble Frappuccino'],
+    fat: [19],
+    cholesterol: [18],
+    sodium: [11],
+    carbs: [23],
+    protein: [12]
+};
 
+let drink = latte
 
 const ctx = document.getElementById("myChart");
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Total Fat', 'Total Carbs', 'Sodium', 'Cholesterol', 'Protein', 'Caffeine'],
-        datasets: [{
-            label: 'grams',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
+        labels: drink.name,
+        datasets: [
+            {
+                label: 'Total Fat',
+                data: drink.fat,
+                backgroundColor: '#A6CCD1',
+            },
+            {
+                label: 'Total Carbohydrates',
+                data: drink.carbs,
+                backgroundColor: '#D6E9F7',
+            },
+            {
+                label: 'Protein',
+                data: drink.protein,
+                backgroundColor: '#EBCCD1',
+            },
+            {
+                label: 'Sodium',
+                data: drink.sodium,
+                backgroundColor: '#E8E9F7',
+            },
+            {
+                label: 'Cholesterol',
+                data: drink.cholesterol,
+                backgroundColor: '#BCBBCA',
+            }
+        ]
     },
     options: {
         scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+            xAxes: [{ stacked: true }],
+            yAxes: [{ stacked: true }]
         }
     }
-
 });
+
+document.addEventListener('click', (event) => {
+    if (!event.target.matches('.click-me')) return; 
+    event.preventDefault(); 
+    
+    const selected = document.querySelector('.selected');
+    if (selected) {
+        selected.classList.remove('selected');
+    }
+
+    if (event.target.alt === "Caffè Latte") {
+        drink = latte
+        event.target.parentElement.classList.add("selected");
+    } else if (event.target.alt === "Pumpkin Spice Latte") {
+        drink = psl
+        event.target.parentElement.classList.add("selected");
+    } else if (event.target.alt === "Chai Latte") {
+        drink = chai
+        event.target.parentElement.classList.add("selected");
+    } else if (event.target.alt === "Iced Caffè Mocha") {
+        drink = mocha
+        event.target.parentElement.classList.add("selected");
+    } else if (event.target.alt === "Iced Caramel Macchiato") {
+        drink = caramel_macchiato
+        event.target.parentElement.classList.add("selected");
+    } else if (event.target.alt === "Pumpkin Cream Cold Brew") {
+        drink = pumpkin_cold_brew
+        event.target.parentElement.classList.add("selected");
+    } else if (event.target.alt === "Hot Chocolate") {
+        drink = hot_chocolate
+        event.target.parentElement.classList.add("selected");
+    } else if (event.target.alt === "Caramel Frappuccino") {
+        drink = caramel_frap
+        event.target.parentElement.classList.add("selected");
+    } else if (event.target.alt === "Mocha Cookie Crumble Frappuccino") {
+        drink = cookie_frap
+        event.target.parentElement.classList.add("selected");
+    }
+
+    myChart.data.labels = drink.name;
+    myChart.data.datasets = [
+        {
+            label: 'Total Fat',
+            data: drink.fat,
+            backgroundColor: '#A6CCD1',
+        },
+        {
+            label: 'Total Carbohydrates',
+            data: drink.carbs,
+            backgroundColor: '#D6E9F7',
+        },
+        {
+            label: 'Protein',
+            data: drink.protein,
+            backgroundColor: '#EBCCD1',
+        },
+        {
+            label: 'Sodium',
+            data: drink.sodium,
+            backgroundColor: '#E8E9F7',
+        },
+        {
+            label: 'Cholesterol',
+            data: drink.cholesterol,
+            backgroundColor: '#BCBBCA',
+        }
+    ]
+    myChart.update();
+
+    
+}, false);
+

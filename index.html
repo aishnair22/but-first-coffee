@@ -7,8 +7,10 @@
     <link rel="icon" href="./images/favicon.png" type="image/png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./stylesheets/reset.css">
     <link rel="stylesheet" href="./stylesheets/header.css">
     <link rel="stylesheet" href="./stylesheets/graph.css">
@@ -31,22 +33,53 @@
         </div>
     </header>
 
+    <div class="horizontal-line"></div>
+
     <div class="main">
-        <div class="all-drink-info">
-            <div>
-                <div>drink name</div>
-                <div>
-                    <img src="./images/pumpkin_cold_brew.jpg" height="100px" width="100px" alt="">
-                </div>
-            </div>
+        <ul class="all-pics">
+            <li class="indiv-image selected">
+                <img class="click-me" src="./images/latte.jpg" alt="Caffè Latte">
+                <h1 class="caption">Caffè Latte</h1>
+            </li>
+            <li class="indiv-image">
+                <img class="click-me" src="./images/PSL.jpg" alt="Pumpkin Spice Latte">
+                <h1 class="caption">Pumpkin Spice Latte</h1>
+            </li>
+            <li class="indiv-image">
+                <img class="click-me" src="./images/chai.jpg" alt="Chai Latte">
+                <h1 class="caption">Chai Latte</h1>
+            </li>
+            <li class="indiv-image">
+                <img class="click-me" src="./images/iced_mocha.jpg" alt="Iced Caffè Mocha">
+                <h1 class="caption">Iced Caffè Mocha</h1>
+            </li>
+            <li class="indiv-image">
+                <img class="click-me" src="./images/caramel_macchiato.jpg" alt="Iced Caffè Mocha">
+                <h1 class="caption">Iced Caffè Mocha</h1>
+            </li>
+            <li class="indiv-image">
+                <img class="click-me" src="./images/pumpkin_cold_brew.jpg" alt="Pumpkin Cream Cold Brew">
+                <h1 class="caption">Pumpkin Cream Cold Brew</h1>
+            </li>
+            <li class="indiv-image">
+                <img class="click-me" src="./images/hot_chocolate.jpg" alt="Hot Chocolate">
+                <h1 class="caption">Hot Chocolate</h1>
+            </li>
+            <li class="indiv-image">
+                <img class="click-me" src="./images/caramel_frap.jpg" alt="Caramel Frappuccino">
+                <h1 class="caption">Caramel Frappuccino</h1>
+            </li>
+            <li class="indiv-image">
+                <img class="click-me" src="./images/mocha_cookie.jpg" alt="Mocha Cookie Crumble Frappuccino">
+                <h1 class="caption">Mocha Frappuccino</h1>
+            </li>
+        </ul>
 
-            <div class="graph">Nutritional Facts
-                <canvas id="myChart"></canvas>
-                <script src="graph.js"></script>
-            </div>
+        <div class="graph">
+            <h1>% of DV based on a 2000 Calorie Daily Intake</h1>
+            <canvas id="myChart"></canvas>
+            <script src="graph.js"></script>
         </div>
-
-        <div>all pics at bottom</div>
     </div>
 </body>
 </html>
