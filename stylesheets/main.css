@@ -1,6 +1,6 @@
 .main {
     display: flex;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .all-pics {
@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid transparent;
+    border: 5px solid transparent;
 }
 
 .click-me:hover {

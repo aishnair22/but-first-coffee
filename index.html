@@ -6,15 +6,13 @@
     <title>But First, Coffee</title>
     <link rel="icon" href="./images/favicon.png" type="image/png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="./stylesheets/reset.css">
     <link rel="stylesheet" href="./stylesheets/header.css">
     <link rel="stylesheet" href="./stylesheets/graph.css">
     <link rel="stylesheet" href="./stylesheets/main.css">
+    <link rel="stylesheet" href="./stylesheets/modal.css">
 
 </head>
 <body class="entire-page">
@@ -77,9 +75,25 @@
 
         <div class="graph">
             <h1>% of DV based on a 2000 Calorie Daily Intake</h1>
+            <h2>*all data is based on a 16oz drink size</h2>
             <canvas id="myChart"></canvas>
             <script src="graph.js"></script>
         </div>
     </div>
+
+    <div class="modal is-open"> 
+        <div class="modal-text">
+            <h1 class="modal-title">but first, coffee</h1>
+            <h2>designed and developed by Aishwarya Nair</h2>
+            <p>Welcome to a data visualization website that displays nutritional facts of popular Starbucks drinks!
+               Click on any drink and hover over the graph to learn about its nutritional value breakdown.
+            </p>
+            <button class="modal-close">Get Started!</button>
+        </div>
+    
+        <div class="modal-screen"></div>
+        <script src="modal.js"></script>
+    </div>
+
 </body>
 </html>
