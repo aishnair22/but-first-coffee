@@ -1,6 +1,8 @@
 # But First, Coffee
 
-<img src="./images/logo.png" alt="logo">
+<p align="center">
+    <img  src="./images/logo.png" width="60%" alt="logo">
+</p>
 
 But First, Coffee is a data visualization website that displays nutritional facts of popular Starbucks drinks. Users can click on any drink and hover over the graph to learn about its nutritional value breakdown.
 
