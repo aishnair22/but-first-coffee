@@ -21,10 +21,55 @@ Live site: [But First, Coffee](https://aishnair22.github.io/but-first-coffee/)
 ## Functionality
 * Introduction Modal to describe the website to users
 * Users can choose from 9 drinks
-* Graph renders with new data for each drink
+* Users can hover over the graph to get the exact percentage data values
+* Graph re-renders with new data for each drink
+
+### Code for Graph Re-render
+I added a click event listener to each of the drink images. Depending on the alt attribute on the image that was clicked, I reassigned the drink variable to evaluated event.target.alt, which corresponds to the correct drink object that had been defined earlier in the file. I then reassign the chart data and labels, and call the update method that is part of the Chart.js API.
+
+<pre><code>
+    document.addEventListener('click', (event) => {
+        if (!event.target.matches('.click-me')) return; 
+
+        drink = eval(event.target.alt)
+        
+        myChart.data.labels = drink.name;    
+        myChart.data.datasets = [
+            {
+                label: 'Total Fat',
+                data: drink.fat,
+                backgroundColor: '#cde5ce',
+            },
+            {
+                label: 'Carbohydrates',
+                data: drink.carbs,
+                backgroundColor: '#e6cbe3',
+            },
+            {
+                label: 'Protein',
+                data: drink.protein,
+                backgroundColor: '#c9cce8',
+            },
+            {
+                label: 'Sodium',
+                data: drink.sodium,
+                backgroundColor: '#b9def8',
+            },
+            {
+                label: 'Cholesterol',
+                data: drink.cholesterol,
+                backgroundColor: '#ffc6b3',
+            }
+        ]
+        myChart.update();
+    }, false);
+</code></pre>
 
 ### Intro Modal
 <img src="./images/intro-modal.png" alt="intro modal">
 
 ### Main Page
 <img src="./images/main-page.png" alt="main page">
+
+### Website Tour
+<img src="./images/main-page.gif" alt="main page">

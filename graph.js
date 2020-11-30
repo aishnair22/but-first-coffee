@@ -67,7 +67,7 @@ const caramel_frap = {
     protein: [8]
 };
 const cookie_frap = {
-    name: ['Mocha Cookie Crumble Frappuccino'],
+    name: ['Mocha Cookie Frappuccino'],
     fat: [19],
     cholesterol: [18],
     sodium: [11],
@@ -120,6 +120,11 @@ const myChart = new Chart(ctx, {
             }],
             yAxes: [{
                 stacked: true,
+                ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 100
+                },
                 scaleLabel: {
                     display: true,
                     labelString: '% Daily Value Per Category'
@@ -146,29 +151,11 @@ document.addEventListener('click', (event) => {
     if (selected) {
         selected.classList.remove('selected');
     }
-
-    if (event.target.alt === "Caffè Latte") {
-        drink = latte
-    } else if (event.target.alt === "Pumpkin Spice Latte") {
-        drink = psl
-    } else if (event.target.alt === "Chai Latte") {
-        drink = chai
-    } else if (event.target.alt === "Iced Caffè Mocha") {
-        drink = mocha
-    } else if (event.target.alt === "Iced Caramel Macchiato") {
-        drink = caramel_macchiato
-    } else if (event.target.alt === "Pumpkin Cream Cold Brew") {
-        drink = pumpkin_cold_brew
-    } else if (event.target.alt === "Hot Chocolate") {
-        drink = hot_chocolate
-    } else if (event.target.alt === "Caramel Frappuccino") {
-        drink = caramel_frap
-    } else if (event.target.alt === "Mocha Cookie Crumble Frappuccino") {
-        drink = cookie_frap
-    }
     event.target.parentElement.classList.add("selected");
 
-    myChart.data.labels = drink.name;
+    drink = eval(event.target.alt)
+    
+    myChart.data.labels = drink.name;    
     myChart.data.datasets = [
         {
             label: 'Total Fat',
