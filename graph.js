@@ -86,27 +86,27 @@ const myChart = new Chart(ctx, {
             {
                 label: 'Total Fat',
                 data: drink.fat,
-                backgroundColor: '#d8ebd9',
+                backgroundColor: '#cde5ce',
             },
             {
-                label: 'Total Carbohydrates',
+                label: 'Carbohydrates',
                 data: drink.carbs,
-                backgroundColor: '#eddaeb',
+                backgroundColor: '#e6cbe3',
             },
             {
                 label: 'Protein',
                 data: drink.protein,
-                backgroundColor: '#d5d7ed',
+                backgroundColor: '#c9cce8',
             },
             {
                 label: 'Sodium',
                 data: drink.sodium,
-                backgroundColor: '#cae6fa',
+                backgroundColor: '#b9def8',
             },
             {
                 label: 'Cholesterol',
                 data: drink.cholesterol,
-                backgroundColor: '#eddae1',
+                backgroundColor: '#ffc6b3',
             }
         ]
     },
@@ -115,17 +115,23 @@ const myChart = new Chart(ctx, {
             xAxes: [{
                 stacked: true,
                 ticks: {
-                    fontSize: 16
+                    fontSize: 16,
                 }
             }],
-            yAxes: [{ stacked: true }]
+            yAxes: [{
+                stacked: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: '% Daily Value Per Category'
+                }
+            }]
         },
         tooltips: {
             callbacks: {
                 label: function (tooltipItem, data) {
                     let label = data.datasets[tooltipItem.datasetIndex].label;
                     label += ': ' + tooltipItem.yLabel;
-                    return ' ' + label + '% of DV';
+                    return ' ' + label + '% Daily Value';
                 }
             }
         },
@@ -167,27 +173,27 @@ document.addEventListener('click', (event) => {
         {
             label: 'Total Fat',
             data: drink.fat,
-            backgroundColor: '#d8ebd9',
+            backgroundColor: '#cde5ce',
         },
         {
-            label: 'Total Carbohydrates',
+            label: 'Carbohydrates',
             data: drink.carbs,
-            backgroundColor: '#eddaeb',
+            backgroundColor: '#e6cbe3',
         },
         {
             label: 'Protein',
             data: drink.protein,
-            backgroundColor: '#d5d7ed',
+            backgroundColor: '#c9cce8',
         },
         {
             label: 'Sodium',
             data: drink.sodium,
-            backgroundColor: '#cae6fa',
+            backgroundColor: '#b9def8',
         },
         {
             label: 'Cholesterol',
             data: drink.cholesterol,
-            backgroundColor: '#eddae1',
+            backgroundColor: '#ffc6b3',
         }
     ]
     myChart.update();
