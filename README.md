@@ -25,7 +25,7 @@ Live site: [But First, Coffee](https://aishnair22.github.io/but-first-coffee/)
 * Graph re-renders with new data for each drink
 
 ### Code for Graph Re-render
-I added a click event listener to each of the drink images. Depending on the alt attribute on the image that was clicked, I reassigned the drink variable to evaluated event.target.alt, which corresponds to the correct drink object that had been defined earlier in the file. I then reassign the chart data and labels, and call the update method that is part of the Chart.js API.
+I added a click event listener to each of the drink images. Depending on the alt attribute of the image that was clicked, I reassigned the drink variable to the evaluated event.target.alt, which corresponded to the correct drink object that had been defined earlier in the file. I then reassigned the chart data and labels, and called the update method that is part of the Chart.js API.
 
 <pre><code>
     document.addEventListener('click', (event) => {
